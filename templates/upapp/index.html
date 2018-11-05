@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh_hans">
+<head>
+    <title>文件上传</title>
+    <script type="text/javascript">window.__admin_utc_offset__ = "28800";</script>
+    <meta name="robots" content="NONE,NOARCHIVE"/>
+	<style type="text/css">
+		body {
+			margin-top: 150px;
+			margin-left: 40%;
+			font-size:100%;
+			background: url("{% static 'images/bg8.jpg' %}");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			background-size: cover;
+		}
+        div{
+            text-decoration: none;
+        }
+        h1 {
+            color: #5AF62E;
+            /*color: red;*/
+            /*color: red;*/
+        }
+	</style>
+</head>
+<body class=" login">
+<!-- Container -->
+<div id="container">
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+            <h1 id="site-name">文件上传系统</h1>
+        </div>
+    </div>
+    <!-- END Header -->
+    <!-- Content -->
+    <div id="content" class="colM">
+        <div id="content-main">
+            <form action="" method="post" enctype="multipart/form-data">
+                {{ userform.as_p }}
+                {% csrf_token %}
+                <input type="submit" value="开始上传" />
+            </form>
+            <script type="text/javascript">
+                document.getElementById('id_username').focus()
+            </script>
+        </div>
+        <br class="clear"/>
+    </div>
+    <!-- END Content -->
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+</body>
+</html>
